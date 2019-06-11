@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">CommonBase</string>
+    <string name="news">通讯录</string>
+    <string name="discovery">我的</string>
+    <string name="market">行情</string>
+    <string name="self_selection">自选</string>
+    <string name="my">我的</string>
+
+    <string name="internet_error">网络异常</string>
+    <string name="internet_timeout">网络超时</string>
+    <string name="internet_parse_error">网络解析异常</string>
+    <string name="null_data_error">数据为空</string>
+</resources>

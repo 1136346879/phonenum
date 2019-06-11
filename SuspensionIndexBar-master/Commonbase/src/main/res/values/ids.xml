@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="id_title_back" type="id"></item>
+    <item name="id_title_menu" type="id"></item>
+    <item name="id_dialog_title" type="id"></item>
+    <item name="id_dialog_content" type="id"></item>
+    <item name="id_dialog_button" type="id"></item>
+    <item name="id_dialog_line" type="id"></item>
+</resources>

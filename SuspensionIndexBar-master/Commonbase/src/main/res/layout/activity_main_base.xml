@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.hexun.base.view.MainBottomLayout
+        android:id="@+id/mainBottomLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+
+    <View
+        android:id="@+id/cutLine"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_above="@id/mainBottomLayout"
+        android:background="@color/cut_line" />
+
+    <com.hexun.base.view.NoScrollingViewPager
+        android:id="@+id/noScrollingViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/cutLine" />
+
+</RelativeLayout>

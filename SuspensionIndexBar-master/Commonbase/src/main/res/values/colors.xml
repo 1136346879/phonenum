@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="bottomMenuOnTextColor">#f85959</color>
+    <color name="bottomMenuTextColor">#494949</color>
+    <color name="cut_line">#4d000000</color>
+
+</resources>

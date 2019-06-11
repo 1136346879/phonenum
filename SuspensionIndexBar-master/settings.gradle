@@ -1,0 +1,2 @@
+include ':app', ':indexlib', ':WaveSideBar', ':library_update', ':Commonbase', ':CommonRes',
+        ':Extend', ':my', ':discovery', ':news', ':market', ':selfselection'

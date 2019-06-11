@@ -1,0 +1,85 @@
+/**
+ * 统一依赖
+ */
+ext {
+    android = [
+            compileSdkVersion: 25,
+            buildToolsVersion: "25.0.3",
+            minSdkVersion    : 16,
+            targetSdkVersion : 21,
+            versionCode      : 1,
+            versionName      : "1.0"
+    ]
+
+    //支持库版本
+    supportVersion = "25.3.1"
+    supportLibs = [
+            supportAppcompatV7: "com.android.support:appcompat-v7:${supportVersion}",
+            supportV4         : "com.android.support:support-v4:${supportVersion}",
+            suppoutDesign     : "com.android.support:design:${supportVersion}"
+    ]
+
+    //Release版本需要依赖的三方库
+    dependencyLibs = [
+            //Rx
+            rxJava2        : "io.reactivex.rxjava2:rxjava:2.1.3",
+            rxAndroid      : "io.reactivex.rxjava2:rxandroid:2.0.1",
+            rxBinding      : "com.jakewharton.rxbinding2:rxbinding:2.0.0",
+            rxBindingV4    : "com.jakewharton.rxbinding2:rxbinding-support-v4:2.0.0",    //可选
+            rxBindingV7    : "com.jakewharton.rxbinding2:rxbinding-appcompat-v7:2.0.0",  //可选
+            //网络(okGo与NoHttp二选其一)
+            okGo           : "com.lzy.net:okgo:3.0.4",
+            okGoRx         : "com.lzy.net:okrx2:2.0.2",
+            //nohttp         : "com.yanzhenjie.nohttp:nohttp:1.1.4",
+            //LOG
+            log            : "com.blankj:alog:1.3.0",
+            //崩溃恢复
+            recovery       : "com.zxy.android:recovery:0.1.4",
+            //事件
+            eventBus       : "org.greenrobot:eventbus:3.0.0",
+            //图片
+            glide          : "com.github.bumptech.glide:glide:4.0.0",
+            glideProcess   : "com.github.bumptech.glide:compiler:4.0.0",
+            glideTransform : "jp.wasabeef:glide-transformations:3.0.1",
+            glideOkhttp    : "com.github.bumptech.glide:okhttp3-integration:4.1.1",       //可选
+            glideImageView : "com.sunfusheng:glideimageview:1.0.0",                        //可选
+            //存储
+            rxPreference   : "com.f2prateek.rx.preferences2:rx-preferences:2.0.0-RC3",      //可选
+            //路由
+            aRouter        : "com.alibaba:arouter-api:1.2.1.1",
+            aRouterProcess : "com.alibaba:arouter-compiler:1.1.2.1",
+            //AOP
+            aop            : 'org.aspectj:aspectjrt:1.8.10',
+            //换肤
+            skin           : 'skin.support:skin-support:2.1.5',
+            skinDesign    :  'skin.support:skin-support-design:1.2.5',
+            //列表适配
+            recyclerAdapter: 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.29',
+            //解析库
+            gson            : 'com.google.code.gson:gson:2.8.2',
+            //photoView
+            photoView       : 'com.github.chrisbanes:PhotoView:1.3.1',
+            //xRecyclerView
+            xRecyclerView   : 'com.jcodecraeer:xrecyclerview:1.3.2',
+
+            //Dplus
+            dplus           : 'com.umeng.analytics:dplus:latest.integration'
+    ]
+
+    //仅Debug版本需要依赖的第三方库
+    debugLibs = [
+            stetho      : "com.facebook.stetho:stetho:1.5.0",
+            stethoOkhttp: "com.facebook.stetho:stetho-okhttp3:1.5.0",
+            leakcanary  : "com.squareup.leakcanary:leakcanary-android:1.5.4",
+            leak_op     : "com.squareup.leakcanary:leakcanary-android-no-op:1.5.4",
+            blockcanary : "com.github.markzhai:blockcanary-android:1.5.0",
+            block_op    : "com.github.markzhai:blockcanary-no-op:1.5.0",
+            swissKnife  : "com.wanjian:sak:0.1.2.4"
+    ]
+
+    singleRun = [
+            subModule: false
+    ]
+
+
+}
