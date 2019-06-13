@@ -63,7 +63,7 @@ public class NewsMvpFragment extends BaseMvpFragment {
 
     @Override
     public void initFragmentData() {
-        getPersimmionInfoSms();
+
     }
 
     @Override
@@ -168,15 +168,21 @@ public class NewsMvpFragment extends BaseMvpFragment {
     }
 
     private void showLIteView() {
-        ArrayList<HashMap<String, String>> list = getPeopleInPhone2();
-        SimpleAdapter adapter = new SimpleAdapter(
-                this.getContext(),
-                list,
-                android.R.layout.simple_list_item_2,
-                new String[] {"peopleName", "phoneNum"},
-                new int[]{android.R.id.text1, android.R.id.text2}
-        );
-        listview.setAdapter(adapter);
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                  ArrayList<HashMap<String, String>> list = getPeopleInPhone2();
+                SimpleAdapter adapter = new SimpleAdapter(
+                       NewsMvpFragment. this.getContext(),
+                        list,
+                        android.R.layout.simple_list_item_2,
+                        new String[] {"peopleName", "phoneNum"},
+                        new int[]{android.R.id.text1, android.R.id.text2}
+                );
+                listview.setAdapter(adapter);
+            }}).start();
+
 
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -184,9 +190,11 @@ public class NewsMvpFragment extends BaseMvpFragment {
                 callPhone(listNum.get(position).toString());
             }
         });
+        getPersimmionInfoSms();
     }
 
-    private ArrayList<HashMap<String, String>> getPeopleInPhone2(){
+    public ArrayList<HashMap<String, String>> getPeopleInPhone2(){
+
         ArrayList<HashMap<String, String>> list = new ArrayList<HashMap<String, String>>();
         listNum = new ArrayList();
 
@@ -211,7 +219,9 @@ public class NewsMvpFragment extends BaseMvpFragment {
         }
 
         return list;
-    }
+            }
+
+
         private void getPersimmionInfoPhoneNUm() {
             if (Build.VERSION.SDK_INT >= 23) {
                 //1. 检测是否添加权限   PERMISSION_GRANTED  表示已经授权并可以使用

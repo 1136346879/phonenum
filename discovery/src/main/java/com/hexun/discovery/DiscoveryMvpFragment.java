@@ -93,7 +93,7 @@ public class DiscoveryMvpFragment extends BaseMvpFragment {
             tableLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-//                    ToastUtils.showLong(v.getContentDescription().toString());
+//                    ToastUtils.showLong( ""+v.toString());
 
                 }
             });
@@ -116,7 +116,7 @@ public class DiscoveryMvpFragment extends BaseMvpFragment {
             Date date = new Date(Long.parseLong(strDate));
             strDate = dateFormat.format(date);
 
-            String smsTitle = strAddress + "\t\t" + strDate;
+            String smsTitle ="_______________________________________" +"\n"+ strAddress + "\t\t" + strDate;
             String smsBody = strBody + "\n";
             Log.i("tableRow", smsTitle + smsBody);
             TextView tline = new TextView(this.getContext());
@@ -124,7 +124,7 @@ public class DiscoveryMvpFragment extends BaseMvpFragment {
             tableLayout.addView(tline, new TableLayout.LayoutParams(TableRow.LayoutParams.FILL_PARENT, TableRow.LayoutParams.WRAP_CONTENT));
             // title Row
             TableRow trTitle = new TableRow(this.getContext());
-            trTitle.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
+//            trTitle.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
 
             TextView tvTitle = new TextView(this.getContext());
             tvTitle.setText(smsTitle);
@@ -133,14 +133,14 @@ public class DiscoveryMvpFragment extends BaseMvpFragment {
             tvTitle.setTextSize(16.0f);
             tvTitle.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
             trTitle.addView(tvTitle);
-            tableLayout.addView(trTitle, new TableLayout.LayoutParams(TableRow.LayoutParams.FILL_PARENT, TableRow.LayoutParams.WRAP_CONTENT));
+//            tableLayout.addView(trTitle, new TableLayout.LayoutParams(TableRow.LayoutParams.FILL_PARENT, TableRow.LayoutParams.WRAP_CONTENT));
 
             // body Row
             TableRow trBody = new TableRow(this.getContext());
             trBody.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
 
             TextView tvBody = new TextView(this.getContext());
-            tvBody.setText(smsBody);
+            tvBody.setText(smsTitle + "\n" +smsBody);
             tvBody.getPaint().setFakeBoldText(false);
             tvBody.setTextSize(14.0f);
             tvBody.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));

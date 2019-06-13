@@ -33,7 +33,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="fffffffff"
+            android:text=""
             android:textColor="#535353"
             android:textStyle="bold"
             android:textSize="40sp" />

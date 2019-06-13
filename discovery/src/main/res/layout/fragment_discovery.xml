@@ -22,7 +22,7 @@
                 android:textColor="#fff"
                 android:textSize="28sp"
                 android:textStyle="bold"
-                android:visibility="gone" />
+                />
 
             <TextView
                 android:id="@+id/nameText"
@@ -83,6 +83,7 @@
                 android:background="#000" />
 
             <TextView
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
