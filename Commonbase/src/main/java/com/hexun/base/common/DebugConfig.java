@@ -43,9 +43,9 @@ public class DebugConfig {
 //            BlockCanary.install(context, new AppBlockCanaryContext()).start();
 //        }
 
-        if (swissArmyOn){
-            SAK.init(context);
-        }
+//        if (swissArmyOn){
+//            SAK.init(context);
+//        }
     }
 
 

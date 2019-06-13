@@ -94,8 +94,8 @@ public class MainBottomLayout extends LinearLayout {
         bottomTabList.add(newsText.getText().toString());
         bottomTabList.add(discoveryText.getText().toString());
         bottomTabList.add(marketText.getText().toString());
-//        bottomTabList.add(selfSelectionText.getText().toString());
-//        bottomTabList.add(myText.getText().toString());
+        bottomTabList.add(selfSelectionText.getText().toString());
+        bottomTabList.add(myText.getText().toString());
         return bottomTabList;
     }
 

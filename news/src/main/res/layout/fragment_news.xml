@@ -6,72 +6,110 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:text="选择你喜欢的通讯录模式"
-        android:textSize="28sp"
-        android:textColor="#fff"
-        android:gravity="center"
+        android:layout_height="40dp"
         android:background="#f08327"
-        />
-
-    <com.youth.banner.Banner
-        android:id="@+id/homeBanner"
-        android:layout_width="match_parent"
-        android:layout_height="256dp"
-        android:adjustViewBounds="true"
-        android:scaleType="centerCrop"/>
-
-    <TextView
-        android:visibility="gone"
-        android:id="@+id/nameText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="选择你喜欢的通讯录模式"
+        android:textColor="#fff"
         android:textSize="20sp" />
 
-    <Button
-        android:textSize="16sp"
-        android:layout_marginTop="10dp"
-        android:id="@+id/wx"
+    <ScrollView
+
+
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="微信通讯录界面" />
+        android:layout_height="match_parent">
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.youth.banner.Banner
+                android:id="@+id/homeBanner"
+                android:layout_width="match_parent"
+                android:layout_height="256dp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:id="@+id/nameText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:visibility="gone" />
+
+            <Button
+                android:visibility="gone"
+                android:id="@+id/wx"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="微信通讯录界面"
+                android:textSize="16sp" />
 
 
-    <Button
-        android:textSize="16sp"
-        android:id="@+id/main"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="普通城市列表界面"
-        android:visibility="gone" />
+            <Button
+                android:id="@+id/main"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="普通城市列表界面"
+                android:textSize="16sp"
+                android:visibility="gone" />
 
 
-    <Button
-        android:textSize="16sp"
-        android:id="@+id/swipe"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="侧滑删除通讯录" />
+            <Button
+                android:visibility="gone"
 
-    <Button
-        android:textSize="16sp"
-        android:id="@+id/meituanCityList"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="美团城市列表"
-        android:visibility="gone" />
+                android:id="@+id/swipe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="侧滑删除通讯录"
+                android:textSize="16sp" />
 
-    <Button
-        android:textSize="16sp"
-        android:id="@+id/WaveSideBarList"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="波浪式选择通讯录" />
+            <Button
+                android:id="@+id/meituanCityList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="美团城市列表"
+                android:textSize="16sp"
+                android:visibility="gone" />
 
-    <Button
-        android:textSize="16sp"
-        android:id="@+id/sortList"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="排序和顶部浮窗通讯录" />
+            <Button
+                android:visibility="gone"
+
+                android:id="@+id/WaveSideBarList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="波浪式选择通讯录"
+                android:textSize="16sp" />
+
+            <Button
+                android:visibility="gone"
+
+                android:id="@+id/sortList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="排序和顶部浮窗通讯录"
+                android:textSize="16sp" />
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:padding="10dp"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="您的通讯录" />
+            <com.hexun.news.WrapContentListView
+                android:fillViewport="true"
+                android:id="@+id/list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/primary_white"
+                android:divider="@color/gray"
+                android:dividerHeight="1dp" />
+        </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

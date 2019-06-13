@@ -4,168 +4,209 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
-        android:background="#f08327"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="常用联系人 和 短信信息"
-        android:gravity="center_horizontal"
-        android:textColor="#fff"
-        android:textSize="28sp"
-        android:textStyle="bold" />
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/nameText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:visibility="gone" />
-
-
-    <TextView
-        android:id="@+id/phone1"
-        android:padding="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="老王      15625669598" />
-
-    <TextView
-        android:id="@+id/phone2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:text="刘德华      16895896847" />
-
-    <TextView
-        android:id="@+id/phone3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:text="莉莉      18547958463" />
-
-    <TextView
-        android:id="@+id/phone4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:text="吴磊      15648975896" />
-    <TextView
-        android:id="@+id/phone5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:text="思泽      14869325479" />
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#000"
-        />
-    <TextView
-        android:textSize="18sp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="短信" />
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#f5f5f5"
-        />
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-    <ImageView
-        android:layout_margin="10dp"
-        android:id="@+id/imagewe"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:src="@drawable/block_canary_icon"
-        />
-    <TextView
-        android:layout_marginTop="10dp"
-        android:layout_toRightOf="@+id/imagewe"
-        android:id="@+id/namee"
-        android:text="通知类信息"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <TextView
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/namee"
-        android:layout_toRightOf="@+id/imagewe"
-        android:id="@+id/content"
-        android:text="制造业是指机械工业时代对制造资源（物料、能源、设备、工具、资金、技术、信息和人力等），按照市场要求，通过制造过程，转化为可供人们使用和利用的大型工具、工业品与生活消费产品的行业。然而，制造业也有自己面临的难题，oa系统能为制造业解决什么难题？我们看一下制造业所面临"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-</RelativeLayout>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#f5f5f5"
-        />
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <ImageView
-            android:layout_margin="10dp"
-            android:id="@+id/imagewe1"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:src="@drawable/sms"
-            />
-        <TextView
-            android:layout_marginTop="10dp"
-            android:layout_toRightOf="@+id/imagewe1"
-            android:id="@+id/namee1"
-            android:text="铁路客服中心"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <TextView
-            android:layout_marginTop="10dp"
-            android:layout_below="@+id/namee1"
-            android:layout_toRightOf="@+id/imagewe1"
-            android:id="@+id/content1"
-            android:text="【铁路12306】用户注册或既有用户手机核验专用验证码：441368。如非本人直接访问12306，请停止操作，切勿将验证码提供给第三方。
-"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#f08327"
+                android:gravity="center_horizontal"
+                android:text="常用联系人 和 短信信息"
+                android:textColor="#fff"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
 
-    </RelativeLayout>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#f5f5f5"
-        />
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <ImageView
-            android:layout_margin="10dp"
-            android:id="@+id/imagewe2"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:src="@drawable/person"
-            />
-        <TextView
-            android:layout_marginTop="10dp"
-            android:layout_toRightOf="@+id/imagewe2"
-            android:id="@+id/namee2"
-            android:text="中国移动10086"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/nameText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:visibility="gone" />
 
-        <TextView
-            android:layout_marginTop="10dp"
-            android:layout_below="@+id/namee2"
-            android:layout_toRightOf="@+id/imagewe2"
-            android:id="@+id/content2"
-            android:text="恭喜您成功参与北京移动APP”翻牌子”活动，获得10MB奖励，请您尽快登录北京移动APP，到“我的-我的卡券”领兑，过期则失效哦！http://dx.10086.cn/MBf6R7j
-"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
 
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/phone1"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="老王      15625669598"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/phone2"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="刘德华      16895896847"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/phone3"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="莉莉      18547958463"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/phone4"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="吴磊      15648975896"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/phone5"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="思泽      14869325479"
+                android:visibility="gone" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#000" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="短信"
+                android:textSize="18sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#f5f5f5" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/imagewe"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/block_canary_icon" />
+
+                <TextView
+                    android:id="@+id/namee"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@+id/imagewe"
+                    android:text="通知类信息" />
+
+                <TextView
+                    android:id="@+id/content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/namee"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@+id/imagewe"
+                    android:text="制造业是指机械工业时代对制造资源（物料、能源、设备、工具、资金、技术、信息和人力等），按照市场要求，通过制造过程，转化为可供人们使用和利用的大型工具、工业品与生活消费产品的行业。然而，制造业也有自己面临的难题，oa系统能为制造业解决什么难题？我们看一下制造业所面临" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#f5f5f5" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/imagewe1"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/sms" />
+
+                <TextView
+                    android:id="@+id/namee1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@+id/imagewe1"
+                    android:text="铁路客服中心" />
+
+                <TextView
+                    android:id="@+id/content1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/namee1"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@+id/imagewe1"
+                    android:text="【铁路12306】用户注册或既有用户手机核验专用验证码：441368。如非本人直接访问12306，请停止操作，切勿将验证码提供给第三方。
+" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#f5f5f5" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/imagewe2"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/person" />
+
+                <TextView
+                    android:id="@+id/namee2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@+id/imagewe2"
+                    android:text="中国移动10086" />
+
+                <TextView
+                    android:id="@+id/content2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/namee2"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@+id/imagewe2"
+                    android:text="恭喜您成功参与北京移动APP”翻牌子”活动，获得10MB奖励，请您尽快登录北京移动APP，到“我的-我的卡券”领兑，过期则失效哦！http://dx.10086.cn/MBf6R7j
+" />
+
+            </RelativeLayout>
+
+            <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/tableLayout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"></TableLayout>
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
 </LinearLayout>

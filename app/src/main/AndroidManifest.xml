@@ -33,6 +33,8 @@
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_CALL_LOG" />
+    <uses-permission android:name="android.permission.READ_SMS" />
 
 
     <uses-feature android:name="android.hardware.camera" />
@@ -47,6 +49,7 @@
     <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -57,8 +60,7 @@
         >
         <activity android:name=".ui.MainActivity">
         </activity>
-        <activity android:name="com.hexun.news.WeChatActivity">
-        </activity>
+        <activity android:name="com.hexun.news.WeChatActivity"/>
         <activity android:name="com.hexun.news.SwipeDelMenuActivity"></activity>
         <activity android:name="com.hexun.news.WaveslideBarActivity"></activity>
         <activity android:name="com.hexun.news.SortListActivity"></activity>
@@ -71,7 +73,8 @@
         </activity>
         <activity android:name="com.hexun.news.MeituanSelectCityActivity">
         </activity>
-
+        <activity android:name="com.hexun.base.phonenum.PhoneHistory">
+        </activity>
         <service android:name="cn.jpush.android.service.PushService"
             android:process=":multiprocess"
             tools:node="replace" ></service>

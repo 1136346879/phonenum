@@ -1,2 +1,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.hexun.news"/>
+    package="com.hexun.news">
+
+    <application>
+
+
+        <activity android:name="com.hexun.news.phoneRead"/>
+        <activity android:name="com.hexun.news.phoneRead2"/>
+        <activity android:name="com.hexun.news.smsRead"/>
+        <activity android:name="com.hexun.news.smsRead4"/>
+        <activity android:name="com.hexun.news.smsRead2"/>
+        <activity android:name="com.hexun.news.smsRead3"/>
+
+    </application>
+
+</manifest>

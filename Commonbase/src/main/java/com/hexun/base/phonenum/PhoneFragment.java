@@ -1,4 +1,4 @@
-package com.hexun.selfselection;
+package com.hexun.base.phonenum;
 
 import android.Manifest;
 import android.content.ContentResolver;
@@ -7,22 +7,15 @@ import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Build;
-import android.os.Bundle;
 import android.provider.CallLog;
-import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
 
-import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.alibaba.android.arouter.launcher.ARouter;
-import com.hexun.base.phonenum.ImpowerAdapter;
-import com.hexun.base.phonenum.MobileUtil;
-import com.hexun.base.phonenum.TimeStampUtil;
+import com.hexun.base.R;
 import com.hexun.base.router.RouterSheet;
 import com.hexun.base.ui.BaseMvpFragment;
 
@@ -32,12 +25,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-/**
- * @author yangyi 2017年10月19日13:37:01
- */
-@Route(path = RouterSheet.SELF_SELECTION)
-public class SelfSelectionMvpFragment extends BaseMvpFragment {
+public class PhoneFragment extends BaseMvpFragment {
     private ListView slvItem;
     private List<Map<String, String>> dataList;
     private ContentResolver resolver;
@@ -49,10 +37,6 @@ public class SelfSelectionMvpFragment extends BaseMvpFragment {
             , CallLog.Calls.TYPE};// 通话类型}
     private ImpowerAdapter impowerAdapter;
     private String mobile;//被授权人电话号码
-    @Autowired
-    String name;
-
-    TextView nameText;
 
     @Override
     public void initFragmentData() {
@@ -63,23 +47,9 @@ public class SelfSelectionMvpFragment extends BaseMvpFragment {
     public void initFragmentView() {
         initView();
         getPersimmionInfo();
-        if (getView() != null) {
-            nameText = (TextView) getView().findViewById(R.id.nameText);
-            nameText.setText(name);
-        }
     }
     private void initView() {
-        slvItem = (ListView)getView(). findViewById(com.hexun.base.R.id.slv_impower_item);
-    }
-    @Override
-    public int getFragmentViewId() {
-        return R.layout.fragment_self_selection;
-    }
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        ARouter.getInstance().inject(this);
+        slvItem = (ListView)getView(). findViewById(R.id.slv_impower_item);
     }
 
     //**************授权信息
@@ -216,5 +186,9 @@ public class SelfSelectionMvpFragment extends BaseMvpFragment {
         Uri data = Uri.parse("tel:" + phoneNum);
         intent.setData(data);
         startActivity(intent);
+    }
+    @Override
+    public int getFragmentViewId() {
+        return R.layout.activity_phonehisty;
     }
 }

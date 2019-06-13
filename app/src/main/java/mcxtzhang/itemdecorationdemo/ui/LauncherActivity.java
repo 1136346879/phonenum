@@ -1,9 +1,14 @@
 package mcxtzhang.itemdecorationdemo.ui;
 
+import android.Manifest;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -20,6 +25,7 @@ import com.hexun.base.common.CommonBase;
 import com.hexun.base.common.NetConfig;
 import com.hexun.base.common.RecoveryConfig;
 import com.hexun.base.common.ThreadPoolConfig;
+import com.hexun.base.phonenum.PhoneHistory;
 import com.hexun.base.router.RouterSheet;
 import com.hexun.base.util.AppUtils;
 import com.hexun.base.util.DeviceUtils;
@@ -318,7 +324,8 @@ public class LauncherActivity extends AppCompatActivity {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                if (status == 1) {
+//                if (status == 1) {
+                if (status == 0) {
                     tv_progress.setVisibility(View.VISIBLE);
                     installApkUI();
                 } else {
@@ -328,8 +335,7 @@ public class LauncherActivity extends AppCompatActivity {
 //                            loading.setVisibility(View.GONE);
 //                        }
 //                    }, 2000);
-                    finish();
-                    ARouter.getInstance().build(RouterSheet.MAIN).navigation();
+                    getPersimmionInfoPhoneNUm();
                 }
             }
 
@@ -350,4 +356,31 @@ public class LauncherActivity extends AppCompatActivity {
         return super.onKeyDown(keyCode, event);//继续执行父类其他点击事件
     }
 
+    private void getPersimmionInfoPhoneNUm() {
+        if (Build.VERSION.SDK_INT >= 23) {
+            //1. 检测是否添加权限   PERMISSION_GRANTED  表示已经授权并可以使用
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED) {
+                //手机为Android6.0的版本,权限未授权去i请授权
+                //2. 申请请求授权权限
+                //1. Activity
+                // 2. 申请的权限名称
+                // 3. 申请权限的 请求码
+                ActivityCompat.requestPermissions(this, new String[]
+                        {Manifest.permission.READ_CONTACTS//通话记录
+                        }, 1005);
+            } else {//手机为Android6.0的版本,权限已授权可以使用
+                // 执行下一步
+                finish();
+
+                ARouter.getInstance().build(RouterSheet.MAIN).navigation();
+
+            }
+        } else {//手机为Android6.0以前的版本，可以使用
+            finish();
+
+            ARouter.getInstance().build(RouterSheet.MAIN).navigation();
+
+        }
+
+    }
 }

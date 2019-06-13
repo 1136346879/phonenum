@@ -26,6 +26,7 @@ public class RouterSheet {
      * 底部新闻按钮对应的界面
      */
     public static final String NEWS = "/news/NewsFragment";
+    public static final String phone = "/news/phonwFragment";
 
     /**
      * 底部发现发现对应的界面
