@@ -1,2 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.hexun.discovery" />
+    package="com.hexun.discovery" >
+
+    <application>
+        <activity android:name="com.hexun.discovery.ShowXinActivity"/>
+
+
+    </application>
+
+</manifest>

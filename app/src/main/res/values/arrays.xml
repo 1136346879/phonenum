@@ -34,64 +34,53 @@
         <item>贵州</item>
         <item>广西</item>
         <item>海南</item>
-
-        <item>A</item>
-        <item>a</item>
-        <item>b</item>
-        <item>d</item>
-
-        <item>.a</item>
-        <item>;b</item>
-        <item>#c</item>
-        <item>d</item>
-
-        <item>ab</item>
-        <item>aa</item>
+        <item>阿拉善</item>
+        <item>迪奥</item>
     </string-array>
 
     <string-array name="date">
-        <item>阿妹</item>
-        <item>阿郎</item>
-        <item>陈奕迅</item>
-        <item>周杰伦</item>
-        <item>曾一鸣</item>
-        <item>成龙</item>
-        <item>王力宏</item>
-        <item>汪峰</item>
-        <item>王菲</item>
-        <item>那英</item>
-        <item>张伟</item>
-        <item>张学友</item>
-        <item>李德华</item>
-        <item>郑源</item>
-        <item>白水水</item>
-        <item>白天不亮</item>
-        <item>陈龙</item>
-        <item>陈丽丽</item>
-        <item>哈林</item>
-        <item>高进</item>
-        <item>高雷</item>
-        <item>阮今天</item>
-        <item>龚琳娜</item>
-        <item>苏醒</item>
-        <item>苏永康</item>
-        <item>陶喆</item>
-        <item>沙宝亮</item>
-        <item>宋冬野</item>
-        <item>宋伟</item>
-        <item>袁成杰</item>
-        <item>戚薇</item>
-        <item>齐大友</item>
-        <item>齐天大圣</item>
-        <item>品冠</item>
-        <item>吴克群</item>
-        <item>BOBO</item>
-        <item>Jobs</item>
-        <item>动力火车</item>
-        <item>伍佰</item>
-        <item>#蔡依林</item>
-        <item>$797835344$</item>
-        <item>Jack</item>
-        <item>~夏先生</item>
+        <item>15645678956    阿妹</item>
+        <item>14578958963    阿郎</item>
+        <item>14599566895    陈奕迅</item>
+        <item>18797646548    周杰伦</item>
+        <item>12656648465    曾一鸣</item>
+        <item>18979864646    成龙</item>
+        <item>14654613135    王力宏</item>
+        <item>15864336845    汪峰</item>
+        <item>13365895895    王菲</item>
+        <item>16989582256    那英</item>
+        <item>15268995895    张伟</item>
+        <item>12568548526    张学友</item>
+        <item>14599566895    李德华</item>
+        <item>16589578596    郑源</item>
+        <item>15685985662    白水水</item>
+        <item>19854956358    白天不亮</item>
+        <item>15886558596    陈龙</item>
+        <item>14599566895    陈丽丽</item>
+        <item>15862338862    哈林</item>
+        <item>14599566895    高进</item>
+        <item>18974687687    高雷</item>
+        <item>18956859685    阮今天</item>
+        <item>14785956869    龚琳娜</item>
+        <item>15894586699    苏醒</item>
+        <item>18579578596    苏永康</item>
+        <item>12132535657    陶喆</item>
+        <item>14567987648    沙宝亮</item>
+        <item>15498797689    宋冬野</item>
+        <item>18976456876    宋伟</item>
+        <item>187668468798    袁成杰</item>
+        <item>1659867897657    戚薇</item>
+        <item>1456865988796    齐大友</item>
+        <item>654687876789    齐天大圣</item>
+        <item>1876465435435    品冠</item>
+        <item>1545867367987    吴克群</item>
+        <item>19878665464    BOBO</item>
+        <item>152636363636    Jobs</item>
+        <item>18920000000    动力火车</item>
+        <item>152688899963    伍佰</item>
+        <item>185477777777    #蔡依林</item>
+        <item>156895696863    $797835344$</item>
+        <item>145867959623    Jack</item>
+        <item>132654895633    ~夏先生</item>
     </string-array>
 </resources>

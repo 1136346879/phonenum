@@ -12,13 +12,14 @@ public class SortModel implements Serializable {
 	private String sortLetters;
 
 	public SortModel(String name, String sortLetters, boolean isChecked,
-			String iconUrl, int sex) {
+			String iconUrl, int sex,int phunenum) {
 		super();
 		this.name = name;
 		this.sortLetters = sortLetters;
 		this.isChecked = isChecked;
 		this.iconUrl = iconUrl;
 		this.sex = sex;
+		this.phunenum = phunenum;
 	}
 
 	public SortModel() {
@@ -52,6 +53,15 @@ public class SortModel implements Serializable {
 	private boolean isChecked;
 	private String iconUrl;
 	private int sex; // 0 男 1 女
+	private int phunenum; // 0 男 1 女
+
+	public int getPhunenum() {
+		return phunenum;
+	}
+
+	public void setPhunenum(int phunenum) {
+		this.phunenum = phunenum;
+	}
 
 	public String getName() {
 		return name;

@@ -14,6 +14,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.View;
+import android.widget.RelativeLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -28,6 +29,9 @@ import com.hexun.base.util.ToastUtils;
 
 import java.sql.Date;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 import static android.Manifest.permission.READ_SMS;
 import static android.Manifest.permission.RECEIVE_SMS;
@@ -39,6 +43,7 @@ import static android.Manifest.permission.SEND_SMS;
  */
 @Route(path = RouterSheet.DISCOVERY)
 public class DiscoveryMvpFragment extends BaseMvpFragment {
+    List listcontent = new ArrayList();
 
     @Autowired
     String name;
@@ -50,6 +55,9 @@ public class DiscoveryMvpFragment extends BaseMvpFragment {
     private TextView phone3;
     private TextView phone4;
     private TextView phone5;
+    private RelativeLayout duanxin1;
+    private RelativeLayout duanxin2;
+    private RelativeLayout duanxin3;
 
     @Override
     public void initFragmentData() {
@@ -61,12 +69,33 @@ public class DiscoveryMvpFragment extends BaseMvpFragment {
         if (getView() != null) {
             nameText = (TextView) getView().findViewById(R.id.nameText);
             phone1 = (TextView) getView().findViewById(R.id.phone1);
-
             phone2 = (TextView) getView().findViewById(R.id.phone2);
             phone3 = (TextView) getView().findViewById(R.id.phone3);
             phone4 = (TextView) getView().findViewById(R.id.phone4);
             phone5 = (TextView) getView().findViewById(R.id.phone5);
+            duanxin1 = (RelativeLayout) getView().findViewById(R.id.duanxin1);
+            duanxin2 = (RelativeLayout) getView().findViewById(R.id.duanxin2);
+            duanxin3 = (RelativeLayout) getView().findViewById(R.id.duanxin3);
             nameText.setText(name);
+            duanxin1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startAC("制造业是指机械工业时代对制造资源（物料、能源、设备、工具、资金、技术、信息和人力等），按照市场要求，通过制造过程，转化为可供人们使用和利用的大型工具、工业品与生活消费产品的行业。然而，制造业也有自己面临的难题，oa系统能为制造业解决什么难题？我们看一下制造业所面临");
+                }
+            });
+            duanxin2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startAC("【铁路12306】用户注册或既有用户手机核验专用验证码：441368。如非本人直接访问12306，请停止操作，切勿将验证码提供给第三方。"
+                            );
+                }
+            });  duanxin3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startAC("恭喜您成功参与北京移动APP”翻牌子”活动，获得10MB奖励，请您尽快登录北京移动APP，到“我的-我的卡券”领兑，过期则失效哦！http://dx.10086.cn/MBf6R7j"
+                            );
+                }
+            });
             phone1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -103,7 +132,9 @@ public class DiscoveryMvpFragment extends BaseMvpFragment {
                 @Override
                 public void onClick(View v) {
 //                    ToastUtils.showLong( ""+v.toString());
-
+                    Random random = new Random();
+                    int po = random.nextInt(listcontent.size());
+                    startAC(listcontent.get(po).toString());
                 }
             });
         }
@@ -193,6 +224,7 @@ public class DiscoveryMvpFragment extends BaseMvpFragment {
 
             while (cursor.moveToNext()) {
                 System.out.println("--sms-- : " + cursor.getString(cursor.getColumnIndex("body")));
+                listcontent.add(cursor.getString(cursor.getColumnIndex("body")));
             }
 
             return cursor;
@@ -353,5 +385,11 @@ public class DiscoveryMvpFragment extends BaseMvpFragment {
 
         }
 
+    }
+    private void startAC(String con){
+        Intent intent = new Intent();
+        intent.setClass(this.getContext(),ShowXinActivity.class);
+        intent.putExtra("cont",con);
+        startActivity(intent);
     }
 }

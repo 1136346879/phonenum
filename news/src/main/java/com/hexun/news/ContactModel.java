@@ -68,16 +68,12 @@ public class ContactModel {
         contacts.add(new ContactModel("123"));
         contacts.add(new ContactModel("1508022"));
         contacts.add(new ContactModel("2251"));
-        contacts.add(new ContactModel("****"));
-        contacts.add(new ContactModel("####"));
-        contacts.add(new ContactModel("w asad "));
         contacts.add(new ContactModel("我爱你"));
         contacts.add(new ContactModel("一百二十二"));
         contacts.add(new ContactModel("壹"));
         contacts.add(new ContactModel("I"));
         contacts.add(new ContactModel("肆"));
         contacts.add(new ContactModel("王八蛋"));
-        contacts.add(new ContactModel("zzz"));
         contacts.add(new ContactModel("呵呵哒"));
         contacts.add(new ContactModel("叹气"));
         contacts.add(new ContactModel("南尘"));

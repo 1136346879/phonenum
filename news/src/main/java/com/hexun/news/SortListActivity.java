@@ -1,6 +1,8 @@
 package com.hexun.news;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -73,9 +75,10 @@ public class SortListActivity extends Activity implements View.OnClickListener {
                                     int position, long id) {
 
                 if (!isNeedChecked) {
-                    Toast.makeText(getApplication(),
-                            ((SortModel) adapter.getItem(position)).getName(),
-                            Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(getApplication(),
+//                            ((SortModel) adapter.getItem(position)).getName(),
+//                            Toast.LENGTH_SHORT).show();
+                    callPhone(((SortModel) adapter.getItem(position)).getName().substring(0,11));
                 } else {
                     SourceDateList.get(position).setChecked(
                             !SourceDateList.get(position).isChecked());
@@ -214,5 +217,14 @@ public class SortListActivity extends Activity implements View.OnClickListener {
         }
 
     }
-
+    /**
+     * 拨打电话（直接拨打电话）
+     * @param phoneNum 电话号码
+     */
+    public void callPhone(String phoneNum){
+        Intent intent = new Intent(Intent.ACTION_DIAL);
+        Uri data = Uri.parse("tel:" + phoneNum);
+        intent.setData(data);
+        startActivity(intent);
+    }
 }

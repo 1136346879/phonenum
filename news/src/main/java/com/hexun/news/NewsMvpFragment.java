@@ -69,14 +69,14 @@ public class NewsMvpFragment extends BaseMvpFragment {
 
     @Override
     public void initFragmentView() {
-        list_path.add("http://h.hiphotos.baidu.com/image/pic/item/b999a9014c086e064a76b12f0f087bf40bd1cbfc.jpg");
+//        list_path.add("http://h.hiphotos.baidu.com/image/pic/item/b999a9014c086e064a76b12f0f087bf40bd1cbfc.jpg");
         list_path.add("http://img3.imgtn.bdimg.com/it/u=2758743658,581437775&fm=15&gp=0.jpg");
-        list_path.add("http://img3.imgtn.bdimg.com/it/u=2105877023,3759180926&fm=15&gp=0.jpg");;
-        list_path.add("http://img2.imgtn.bdimg.com/it/u=1876814088,3589919070&fm=15&gp=0.jpg");
+        list_path.add("https://pics4.baidu.com/feed/0df3d7ca7bcb0a4691b736ae34be0f206960aff6.jpeg?token=118f77eb93c1af7308fcfe1742eaf8a8&s=390A26DB4C103C4D5C8E7E3903005054");
+        list_path.add("https://pics1.baidu.com/feed/42a98226cffc1e176e69050522570f07728de979.jpeg?token=64511a785dd2bcfa21d0a8adada70b08&s=13E007AA5A32E2D6562964AD03007002");
 //        list_path.add("http://h.hiphotos.baidu.com/image/pic/item/b999a9014c086e064a76b12f0f087bf40bd1cbfc.jpg");
 //        list_path.add("http://h.hiphotos.baidu.com/image/pic/item/b999a9014c086e064a76b12f0f087bf40bd1cbfc.jpg");
         list_title.add("微信通讯录界面");
-        list_title.add("侧滑删除通讯录");
+//        list_title.add("侧滑删除通讯录");
         list_title.add("波浪式选择通讯录");
         list_title.add("排序和顶部浮窗通讯录");
 //        list_title.add("爱学习");
@@ -95,8 +95,6 @@ public class NewsMvpFragment extends BaseMvpFragment {
                 @Override
                 public void onClick(View v) {
                     startActivity(new Intent(v.getContext(), WeChatActivity.class));
-
-
                 }
             });   /**
              * 第三方的轮播图
@@ -121,9 +119,9 @@ public class NewsMvpFragment extends BaseMvpFragment {
                 @Override
                 public void OnBannerClick(int position) {
                     if(0 == position){
-                        startActivity(new Intent(NewsMvpFragment.this.getContext(), SwipeDelMenuActivity.class));
+                        startActivity(new Intent(NewsMvpFragment.this.getContext(), WeChatActivity.class));
                     }else  if(1 == position){
-                        startActivity(new Intent(NewsMvpFragment.this.getContext(), MeituanSelectCityActivity.class));
+                        startActivity(new Intent(NewsMvpFragment.this.getContext(), SwipeDelMenuActivity.class));
 
                     }else  if(2 == position){
                         startActivity(new Intent(NewsMvpFragment.this.getContext(), WaveslideBarActivity.class));
@@ -150,16 +148,16 @@ public class NewsMvpFragment extends BaseMvpFragment {
             waveSideBarList.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-//                    startActivity(new Intent(v.getContext(), WaveslideBarActivity.class));
+                    startActivity(new Intent(v.getContext(), WaveslideBarActivity.class));
 //                    getPersimmionInfoPhoneNUm();
                 }
             });
             sortList.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-//                    startActivity(new Intent(v.getContext(), SortListActivity.class));
+                    startActivity(new Intent(v.getContext(), SortListActivity.class));
 //                    getPersimmionInfoPhoneNUm();
-                    getPersimmionInfoSms();
+//                    getPersimmionInfoSms();
 
                 }
             });

@@ -97,6 +97,7 @@
                 android:background="#f5f5f5" />
 
             <RelativeLayout
+                android:id="@+id/duanxin1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -132,6 +133,7 @@
                 android:background="#f5f5f5" />
 
             <RelativeLayout
+                android:id="@+id/duanxin2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -168,6 +170,7 @@
                 android:background="#f5f5f5" />
 
             <RelativeLayout
+                android:id="@+id/duanxin3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 

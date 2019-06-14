@@ -49,7 +49,7 @@ public class CityAdapter extends RecyclerView.Adapter<CityAdapter.ViewHolder> {
         holder.content.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(mContext, "pos:" + position, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(mContext, "pos:" + position, Toast.LENGTH_SHORT).show();
             }
         });
         holder.avatar.setImageResource(R.drawable.friend);
