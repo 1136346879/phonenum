@@ -18,7 +18,7 @@
                 android:layout_height="wrap_content"
                 android:background="#f08327"
                 android:gravity="center_horizontal"
-                android:text="常用联系人 和 短信信息"
+                android:text="短信信息"
                 android:textColor="#fff"
                 android:textSize="28sp"
                 android:textStyle="bold"

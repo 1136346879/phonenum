@@ -6,6 +6,7 @@ import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -183,6 +184,10 @@ public class DiscoveryMvpFragment extends BaseMvpFragment {
             tvBody.setText(smsTitle + "\n" +smsBody);
             tvBody.getPaint().setFakeBoldText(false);
             tvBody.setTextSize(14.0f);
+            Drawable drawable = getResources().getDrawable(R.drawable.person_icon);
+            drawable.setBounds(0, 0, drawable.getMinimumWidth(),
+                    drawable.getMinimumWidth());
+            tvBody.setCompoundDrawables(drawable,null,null,null);
             tvBody.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
             trBody.addView(tvBody);
             tableLayout.addView(trBody, new TableLayout.LayoutParams(TableRow.LayoutParams.FILL_PARENT, TableRow.LayoutParams.WRAP_CONTENT));

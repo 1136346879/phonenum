@@ -9,7 +9,7 @@
         android:layout_height="40dp"
         android:background="#f08327"
         android:gravity="center"
-        android:text="选择你喜欢的通讯录模式"
+        android:text="您的通讯录"
         android:textColor="#fff"
         android:textSize="20sp" />
 
@@ -26,6 +26,7 @@
             android:orientation="vertical">
 
             <com.youth.banner.Banner
+                android:visibility="gone"
                 android:id="@+id/homeBanner"
                 android:layout_width="match_parent"
                 android:layout_height="256dp"
@@ -95,6 +96,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <TextView
+                android:visibility="gone"
                 android:padding="10dp"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
