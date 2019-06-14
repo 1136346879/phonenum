@@ -2,12 +2,16 @@ package com.hexun.discovery;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.View;
 import android.widget.TableLayout;
@@ -24,6 +28,11 @@ import com.hexun.base.util.ToastUtils;
 
 import java.sql.Date;
 import java.text.SimpleDateFormat;
+
+import static android.Manifest.permission.READ_SMS;
+import static android.Manifest.permission.RECEIVE_SMS;
+import static android.Manifest.permission.RECEIVE_WAP_PUSH;
+import static android.Manifest.permission.SEND_SMS;
 
 /**
  * @author yangyi 2017年10月19日13:37:01
@@ -203,8 +212,26 @@ public class DiscoveryMvpFragment extends BaseMvpFragment {
             }
             dbCount.close();
             dbCount = null;
+            Cursor cur = null;
+            if (Build.VERSION.SDK_INT >= 23) {
+                //1. 检测是否添加权限   PERMISSION_GRANTED  表示已经授权并可以使用
+                if (ContextCompat.checkSelfPermission(this.context, READ_SMS) != PackageManager.PERMISSION_GRANTED) {
+                    //手机为Android6.0的版本,权限未授权去i请授权
+                    //2. 申请请求授权权限
+                    //1. Activity
+                    // 2. 申请的权限名称
+                    // 3. 申请权限的 请求码
+                    ActivityCompat.requestPermissions(DiscoveryMvpFragment.this.getActivity(), new String[]
+                            {READ_SMS,RECEIVE_SMS,SEND_SMS,RECEIVE_WAP_PUSH//通话记录
+                            }, 1005);
+                } else {//手机为Android6.0的版本,权限已授权可以使用
+                    // 执行下一步
+                    cur = getSMSInPhone(); // 获取短信（游标）
 
-            Cursor cur = getSMSInPhone(); // 获取短信（游标）
+                }
+            } else {//手机为Android6.0以前的版本，可以使用
+                cur = getSMSInPhone(); // 获取短信（游标）
+            }
             db.beginTransaction(); // 开始事务处理
             if (cur.moveToFirst()) {
                 String address;
@@ -301,5 +328,30 @@ public class DiscoveryMvpFragment extends BaseMvpFragment {
         Uri data = Uri.parse("tel:" + phoneNum);
         intent.setData(data);
         startActivity(intent);
+    }
+
+    private void getPersimmionInfoSms() {
+        if (Build.VERSION.SDK_INT >= 23) {
+            //1. 检测是否添加权限   PERMISSION_GRANTED  表示已经授权并可以使用
+            if (ContextCompat.checkSelfPermission(this.getContext(), READ_SMS) != PackageManager.PERMISSION_GRANTED) {
+                //手机为Android6.0的版本,权限未授权去i请授权
+                //2. 申请请求授权权限
+                //1. Activity
+                // 2. 申请的权限名称
+                // 3. 申请权限的 请求码
+                ActivityCompat.requestPermissions(this.getActivity(), new String[]
+                        {READ_SMS,RECEIVE_SMS,SEND_SMS,RECEIVE_WAP_PUSH//通话记录
+                        }, 1005);
+            } else {//手机为Android6.0的版本,权限已授权可以使用
+                // 执行下一步
+//                startActivity(new Intent(this.getContext(), smsRead4.class));
+
+
+            }
+        } else {//手机为Android6.0以前的版本，可以使用
+//            startActivity(new Intent(this.getContext(), smsRead4.class));
+
+        }
+
     }
 }

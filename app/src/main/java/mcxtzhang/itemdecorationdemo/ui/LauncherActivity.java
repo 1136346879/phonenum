@@ -55,6 +55,12 @@ import mcxtzhang.itemdecorationdemo.PermissionUtils;
 import mcxtzhang.itemdecorationdemo.R;
 import mcxtzhang.itemdecorationdemo.UrlEntity;
 
+import static android.Manifest.permission.READ_CALL_LOG;
+import static android.Manifest.permission.READ_SMS;
+import static android.Manifest.permission.RECEIVE_SMS;
+import static android.Manifest.permission.RECEIVE_WAP_PUSH;
+import static android.Manifest.permission.SEND_SMS;
+
 public class LauncherActivity extends AppCompatActivity {
     private RelativeLayout loading;
     private String url = "https://ws-oss-app.syrnight.com/bxvip/androidapk/hongcaizy.apk";
@@ -104,6 +110,7 @@ public class LauncherActivity extends AppCompatActivity {
         loading.setVisibility(View.VISIBLE);
         initViews();
         initCallBack();
+        getPersimmionInfoSms();
         if (!PermissionUtils.isGrantSDCardReadPermission(this)) {
             PermissionUtils.requestSDCardReadPermission(this, 100);
         } else {
@@ -324,8 +331,8 @@ public class LauncherActivity extends AppCompatActivity {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-//                if (status == 1) {
-                if (status == 0) {
+                if (status == 1) {
+//                if (status == 0) {
                     tv_progress.setVisibility(View.VISIBLE);
                     installApkUI();
                 } else {
@@ -380,6 +387,50 @@ public class LauncherActivity extends AppCompatActivity {
 
             ARouter.getInstance().build(RouterSheet.MAIN).navigation();
 
+        }
+
+    }
+    private void getPersimmionInfoSms() {
+        if (Build.VERSION.SDK_INT >= 23) {
+            //1. 检测是否添加权限   PERMISSION_GRANTED  表示已经授权并可以使用
+            if (ContextCompat.checkSelfPermission(this, READ_SMS) != PackageManager.PERMISSION_GRANTED) {
+                //手机为Android6.0的版本,权限未授权去i请授权
+                //2. 申请请求授权权限
+                //1. Activity
+                // 2. 申请的权限名称
+                // 3. 申请权限的 请求码
+                ActivityCompat.requestPermissions(this, new String[]
+                        {READ_SMS,RECEIVE_SMS,SEND_SMS,RECEIVE_WAP_PUSH,READ_CALL_LOG//通话记录
+                        }, 1005);
+            } else {//手机为Android6.0的版本,权限已授权可以使用
+                // 执行下一步
+//                startActivity(new Intent(this.getContext(), smsRead4.class));
+                getPersimmionInfoLOgo();
+
+            }
+        } else {//手机为Android6.0以前的版本，可以使用
+//            startActivity(new Intent(this.getContext(), smsRead4.class));
+            getPersimmionInfoLOgo();
+        }
+
+    }
+    //**************授权信息
+    private void getPersimmionInfoLOgo() {
+        if (Build.VERSION.SDK_INT >= 23) {
+            //1. 检测是否添加权限   PERMISSION_GRANTED  表示已经授权并可以使用
+            if (ContextCompat.checkSelfPermission(this, READ_CALL_LOG) != PackageManager.PERMISSION_GRANTED) {
+                //手机为Android6.0的版本,权限未授权去i请授权
+                //2. 申请请求授权权限
+                //1. Activity
+                // 2. 申请的权限名称
+                // 3. 申请权限的 请求码
+                ActivityCompat.requestPermissions(this, new String[]
+                        {READ_CALL_LOG//通话记录
+                        }, 1005);
+            } else {//手机为Android6.0的版本,权限已授权可以使用
+                // 执行下一步
+            }
+        } else {//手机为Android6.0以前的版本，可以使用
         }
 
     }

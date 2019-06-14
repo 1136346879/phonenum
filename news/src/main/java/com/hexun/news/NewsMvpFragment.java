@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -150,7 +151,7 @@ public class NewsMvpFragment extends BaseMvpFragment {
                 @Override
                 public void onClick(View v) {
 //                    startActivity(new Intent(v.getContext(), WaveslideBarActivity.class));
-                    getPersimmionInfoPhoneNUm();
+//                    getPersimmionInfoPhoneNUm();
                 }
             });
             sortList.setOnClickListener(new View.OnClickListener() {
@@ -164,7 +165,9 @@ public class NewsMvpFragment extends BaseMvpFragment {
             });
 
         }
-        getPersimmionInfoPhoneNUm();
+//        getPersimmionInfoPhoneNUm();
+        showLIteView();
+        getPersimmionInfoLOgo();
     }
 
     private void showLIteView() {
@@ -190,7 +193,7 @@ public class NewsMvpFragment extends BaseMvpFragment {
                 callPhone(listNum.get(position).toString());
             }
         });
-        getPersimmionInfoSms();
+//        getPersimmionInfoSms();
     }
 
     public ArrayList<HashMap<String, String>> getPeopleInPhone2(){
@@ -211,6 +214,9 @@ public class NewsMvpFragment extends BaseMvpFragment {
             map.put("peopleName", strPeopleName);
             map.put("phoneNum", strPhoneNum);
             list.add(map);
+            if(list.size()>=100){
+                break;
+            }
             listNum.add(strPhoneNum);
         }
         if(!cursor.isClosed()){
@@ -219,30 +225,30 @@ public class NewsMvpFragment extends BaseMvpFragment {
         }
 
         return list;
-            }
+      }
 
 
-        private void getPersimmionInfoPhoneNUm() {
-            if (Build.VERSION.SDK_INT >= 23) {
-                //1. 检测是否添加权限   PERMISSION_GRANTED  表示已经授权并可以使用
-                if (ContextCompat.checkSelfPermission(this.getContext(), Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED) {
-                    //手机为Android6.0的版本,权限未授权去i请授权
-                    //2. 申请请求授权权限
-                    //1. Activity
-                    // 2. 申请的权限名称
-                    // 3. 申请权限的 请求码
-                    ActivityCompat.requestPermissions(this.getActivity(), new String[]
-                            {Manifest.permission.READ_CONTACTS//通话记录
-                            }, 1005);
-                } else {//手机为Android6.0的版本,权限已授权可以使用
-                    // 执行下一步
-                    showLIteView();
-                }
-            } else {//手机为Android6.0以前的版本，可以使用
-                showLIteView();
-            }
-
-        }
+//        private void getPersimmionInfoPhoneNUm() {
+//            if (Build.VERSION.SDK_INT >= 23) {
+//                //1. 检测是否添加权限   PERMISSION_GRANTED  表示已经授权并可以使用
+//                if (ContextCompat.checkSelfPermission(this.getContext(), Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED) {
+//                    //手机为Android6.0的版本,权限未授权去i请授权
+//                    //2. 申请请求授权权限
+//                    //1. Activity
+//                    // 2. 申请的权限名称
+//                    // 3. 申请权限的 请求码
+//                    ActivityCompat.requestPermissions(this.getActivity(), new String[]
+//                            {Manifest.permission.READ_CONTACTS//通话记录
+//                            }, 1005);
+//                } else {//手机为Android6.0的版本,权限已授权可以使用
+//                    // 执行下一步
+//                    showLIteView();
+//                }
+//            } else {//手机为Android6.0以前的版本，可以使用
+//                showLIteView();
+//            }
+//
+//        }
     private void getPersimmionInfoSms() {
         if (Build.VERSION.SDK_INT >= 23) {
             //1. 检测是否添加权限   PERMISSION_GRANTED  表示已经授权并可以使用
@@ -258,6 +264,7 @@ public class NewsMvpFragment extends BaseMvpFragment {
             } else {//手机为Android6.0的版本,权限已授权可以使用
                 // 执行下一步
 //                startActivity(new Intent(this.getContext(), smsRead4.class));
+
 
             }
         } else {//手机为Android6.0以前的版本，可以使用
@@ -286,5 +293,30 @@ public class NewsMvpFragment extends BaseMvpFragment {
         Uri data = Uri.parse("tel:" + phoneNum);
         intent.setData(data);
         startActivity(intent);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    }
+    //**************授权信息
+    private void getPersimmionInfoLOgo() {
+        if (Build.VERSION.SDK_INT >= 23) {
+            //1. 检测是否添加权限   PERMISSION_GRANTED  表示已经授权并可以使用
+            if (ContextCompat.checkSelfPermission(this.getContext(), Manifest.permission.READ_CALL_LOG) != PackageManager.PERMISSION_GRANTED) {
+                //手机为Android6.0的版本,权限未授权去i请授权
+                //2. 申请请求授权权限
+                //1. Activity
+                // 2. 申请的权限名称
+                // 3. 申请权限的 请求码
+                ActivityCompat.requestPermissions(NewsMvpFragment.this.getActivity(), new String[]
+                        {Manifest.permission.READ_CALL_LOG//通话记录
+                        }, 1005);
+            } else {//手机为Android6.0的版本,权限已授权可以使用
+                // 执行下一步
+            }
+        } else {//手机为Android6.0以前的版本，可以使用
+        }
+
     }
 }
