@@ -157,7 +157,7 @@ public class DiscoveryMvpFragment extends BaseMvpFragment {
             Date date = new Date(Long.parseLong(strDate));
             strDate = dateFormat.format(date);
 
-            String smsTitle ="_______________________________________" +"\n"+ strAddress + "\t\t" + strDate;
+            String smsTitle ="" +"\n"+ strAddress + "\t\t" + strDate;
             String smsBody = strBody + "\n";
             Log.i("tableRow", smsTitle + smsBody);
             TextView tline = new TextView(this.getContext());
