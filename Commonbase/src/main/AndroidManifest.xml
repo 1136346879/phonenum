@@ -17,6 +17,7 @@
         <activity
             android:name=".ui.MainActivity"
             android:launchMode="singleTask" />
+        <activity android:name="com.hexun.base.dateyearmonthday.AttendviewActivity"/>
 
     </application>
 

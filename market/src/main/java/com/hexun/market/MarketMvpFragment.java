@@ -1,5 +1,6 @@
 package com.hexun.market;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.Toast;
 import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.hexun.base.dateyearmonthday.AttendviewActivity;
 import com.hexun.base.router.RouterSheet;
 import com.hexun.base.ui.BaseMvpFragment;
 
@@ -42,6 +44,7 @@ public class MarketMvpFragment extends BaseMvpFragment {
                 @Override
                 public void onClick(View v) {
                     startWebviewAc("http://www.365rili.com/","日历");
+                    startActivity(new Intent(MarketMvpFragment.this.getContext(), AttendviewActivity.class));
                 }
             });  getView().findViewById(R.id.zanweikaitong).setOnClickListener(new View.OnClickListener() {
                 @Override
