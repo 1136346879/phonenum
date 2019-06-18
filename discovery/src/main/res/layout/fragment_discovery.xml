@@ -12,29 +12,45 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-
-            <TextView
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#f08327"
-                android:gravity="center_horizontal"
-                android:text="短信信息"
-                android:textColor="#fff"
-                android:textSize="28sp"
-                android:textStyle="bold"
-                />
+                android:layout_height="wrap_content">
+                <TextView
+                    android:padding="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#f08327"
+                    android:gravity="center_horizontal"
+                    android:text="短信信息"
+                    android:textColor="#fff"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    />
 
-            <TextView
-                android:id="@+id/nameText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:visibility="gone" />
-
-
+                <TextView
+                    android:id="@+id/sendSms"
+                    android:padding="10dp"
+                    android:text="发短信"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    />
+                <TextView
+                    android:visibility="gone"
+                    android:padding="10dp"
+                    android:text="发短信"
+                    android:id="@+id/nameText"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    />
+            </RelativeLayout>
             <TextView
                 android:id="@+id/phone1"
-
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
@@ -204,6 +220,7 @@
             <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:id="@+id/tableLayout"
                 android:layout_width="fill_parent"
+                android:background="@color/white"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"></TableLayout>
 

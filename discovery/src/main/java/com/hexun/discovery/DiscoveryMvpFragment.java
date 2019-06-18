@@ -15,18 +15,17 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.hexun.base.router.RouterSheet;
 import com.hexun.base.ui.BaseMvpFragment;
-import com.hexun.base.util.ToastUtils;
 
 import java.sql.Date;
 import java.text.SimpleDateFormat;
@@ -50,7 +49,7 @@ public class DiscoveryMvpFragment extends BaseMvpFragment {
     String name;
     TableLayout tableLayout;
     int index = 0;
-    TextView nameText;
+    private  TextView nameText;
     private TextView phone1;
     private TextView phone2;
     private TextView phone3;
@@ -59,6 +58,7 @@ public class DiscoveryMvpFragment extends BaseMvpFragment {
     private RelativeLayout duanxin1;
     private RelativeLayout duanxin2;
     private RelativeLayout duanxin3;
+    private TextView sendSms;
 
     @Override
     public void initFragmentData() {
@@ -69,6 +69,7 @@ public class DiscoveryMvpFragment extends BaseMvpFragment {
     public void initFragmentView() {
         if (getView() != null) {
             nameText = (TextView) getView().findViewById(R.id.nameText);
+            sendSms = (TextView) getView().findViewById(R.id.sendSms);
             phone1 = (TextView) getView().findViewById(R.id.phone1);
             phone2 = (TextView) getView().findViewById(R.id.phone2);
             phone3 = (TextView) getView().findViewById(R.id.phone3);
@@ -81,19 +82,20 @@ public class DiscoveryMvpFragment extends BaseMvpFragment {
             duanxin1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    startAC("制造业是指机械工业时代对制造资源（物料、能源、设备、工具、资金、技术、信息和人力等），按照市场要求，通过制造过程，转化为可供人们使用和利用的大型工具、工业品与生活消费产品的行业。然而，制造业也有自己面临的难题，oa系统能为制造业解决什么难题？我们看一下制造业所面临");
+                    startAC("通知类短信（10001）]" +
+                            "\n\n制造业是指机械工业时代对制造资源（物料、能源、设备、工具、资金、技术、信息和人力等），按照市场要求，通过制造过程，转化为可供人们使用和利用的大型工具、工业品与生活消费产品的行业。然而，制造业也有自己面临的难题，oa系统能为制造业解决什么难题？我们看一下制造业所面临");
                 }
             });
             duanxin2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    startAC("【铁路12306】用户注册或既有用户手机核验专用验证码：441368。如非本人直接访问12306，请停止操作，切勿将验证码提供给第三方。"
+                    startAC("【铁路12306】\n\n用户注册或既有用户手机核验专用验证码：441368。如非本人直接访问12306，请停止操作，切勿将验证码提供给第三方。"
                             );
                 }
             });  duanxin3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    startAC("恭喜您成功参与北京移动APP”翻牌子”活动，获得10MB奖励，请您尽快登录北京移动APP，到“我的-我的卡券”领兑，过期则失效哦！http://dx.10086.cn/MBf6R7j"
+                    startAC("中国移动10086\n\n恭喜您成功参与北京移动APP”翻牌子”活动，获得10MB奖励，请您尽快登录北京移动APP，到“我的-我的卡券”领兑，过期则失效哦！http://dx.10086.cn/MBf6R7j"
                             );
                 }
             });
@@ -138,6 +140,18 @@ public class DiscoveryMvpFragment extends BaseMvpFragment {
                     startAC(listcontent.get(po).toString());
                 }
             });
+            sendSms.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    Intent intentFinalMessage = new Intent(Intent.ACTION_VIEW);
+
+
+                    intentFinalMessage.setType("vnd.android-dir/mms-sms");
+
+                    startActivity(intentFinalMessage);
+                }
+            });
         }
     }
     private void showSMS() {
@@ -160,9 +174,9 @@ public class DiscoveryMvpFragment extends BaseMvpFragment {
             String smsTitle ="" +"\n"+ strAddress + "\t\t" + strDate;
             String smsBody = strBody + "\n";
             Log.i("tableRow", smsTitle + smsBody);
-            TextView tline = new TextView(this.getContext());
-            tline.setText("_______________________________________");
-            tableLayout.addView(tline, new TableLayout.LayoutParams(TableRow.LayoutParams.FILL_PARENT, TableRow.LayoutParams.WRAP_CONTENT));
+            ImageView imageViewLine  = new ImageView(DiscoveryMvpFragment.this.getContext());
+            imageViewLine.setBackground(ContextCompat.getDrawable(DiscoveryMvpFragment.this.getContext(),R.drawable.line));
+            tableLayout.addView(imageViewLine, new TableLayout.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT));
             // title Row
             TableRow trTitle = new TableRow(this.getContext());
 //            trTitle.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
@@ -185,9 +199,12 @@ public class DiscoveryMvpFragment extends BaseMvpFragment {
             tvBody.getPaint().setFakeBoldText(false);
             tvBody.setTextSize(14.0f);
             Drawable drawable = getResources().getDrawable(R.drawable.person_icon);
-            drawable.setBounds(0, 0, drawable.getMinimumWidth(),
-                    drawable.getMinimumWidth());
-            tvBody.setCompoundDrawables(drawable,null,null,null);
+            drawable.setBounds(0, 0, drawable.getMinimumWidth()+20,
+                    drawable.getMinimumWidth()+20);
+            Drawable drawableline = getResources().getDrawable(R.drawable.line);
+            drawableline.setBounds(0, 0, drawableline.getMinimumWidth(),
+                    drawableline.getMinimumWidth());
+            tvBody.setCompoundDrawables(drawable,drawableline,null,null);
             tvBody.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
             trBody.addView(tvBody);
             tableLayout.addView(trBody, new TableLayout.LayoutParams(TableRow.LayoutParams.FILL_PARENT, TableRow.LayoutParams.WRAP_CONTENT));

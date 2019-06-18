@@ -65,9 +65,9 @@ public class ContactModel {
         contacts.add(new ContactModel("Where"));
         contacts.add(new ContactModel("怕"));
         contacts.add(new ContactModel("嘻嘻"));
-        contacts.add(new ContactModel("123"));
-        contacts.add(new ContactModel("1508022"));
-        contacts.add(new ContactModel("2251"));
+//        contacts.add(new ContactModel("123"));
+//        contacts.add(new ContactModel("1508022"));
+//        contacts.add(new ContactModel("2251"));
         contacts.add(new ContactModel("我爱你"));
         contacts.add(new ContactModel("一百二十二"));
         contacts.add(new ContactModel("壹"));

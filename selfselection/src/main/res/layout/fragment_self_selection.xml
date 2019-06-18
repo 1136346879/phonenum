@@ -25,7 +25,7 @@
         android:id="@+id/slv_impower_item"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/primary_white"
+        android:background="@color/white"
         android:divider="#f5f5f5"
         android:dividerHeight="1px" />
 </LinearLayout>

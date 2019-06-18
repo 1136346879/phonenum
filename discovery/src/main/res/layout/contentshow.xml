@@ -1,21 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:layout_height="match_parent">
-<TextView
-android:text="短信内容"
-    android:padding="10dp"
-    android:textSize="18sp"
-    android:background="#f5f5f5"
-    android:gravity="center_horizontal"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content" />
+    android:layout_height="match_parent"
+
+    android:orientation="vertical">
 
     <TextView
-android:id="@+id/content"
-        android:textSize="16sp"
-        android:text=""
+
+        android:id="@+id/title"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-</LinearLayout>
+        android:layout_height="wrap_content"
+        android:background="#f5f5f5"
+        android:gravity="center_horizontal"
+        android:padding="10dp"
+        android:text="短信内容"
+        android:textSize="18sp" />
+
+    <TextView
+        android:padding="20dp"
+        android:layout_below="@+id/title"
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:text="您是卡兰蒂斯扣烂的"
+        android:textSize="16sp" />
+    <TextView
+        android:background="#f5f5f5"
+        android:gravity="center_horizontal"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/reply"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="回复"
+        android:textColor="#f08327"
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp" />
+</RelativeLayout>

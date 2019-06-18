@@ -1,8 +1,6 @@
 package com.hexun.news;
 
 import android.content.Context;
-import android.os.Build;
-import android.support.annotation.RequiresApi;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,14 +11,14 @@ import android.widget.TextView;
 
 import com.hexun.base.R;
 
+import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class NewsCallAdapter extends BaseAdapter {
     private Context context;
-    private List<Map<String, String>> list;
+    private List<HashMap<String, String>> list;
 
-    public NewsCallAdapter(Context context, List<Map<String, String>> list) {
+    public NewsCallAdapter(Context context, List<HashMap<String, String>> list) {
         this.context = context;
         this.list = list;
     }
@@ -42,11 +40,10 @@ public class NewsCallAdapter extends BaseAdapter {
 
     private ImpowerCustomHolder holder;
 
-    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
-            convertView = LayoutInflater.from(context).inflate(R.layout.slv_impower_item, parent, false);
+            convertView = LayoutInflater.from(context).inflate(R.layout.slv_impower_item_news,null);
             holder = new ImpowerCustomHolder();
             holder.ivImg = (ImageView) convertView.findViewById(R.id.iv_impower_item_img);
             holder.tvName = (TextView) convertView.findViewById(R.id.tv_impower_item_name);
@@ -79,12 +76,12 @@ public class NewsCallAdapter extends BaseAdapter {
         /**
          * 通话记录的联系人
          */
-        if (TextUtils.equals((list.get(position).get("name") + ""), "未备注联系人")) {// 通话记录的联系人
-            holder.tvName.setText(list.get(position).get("number"));// 通话记录的联系人
+        if (TextUtils.equals((list.get(position).get("peopleName") + ""), "未备注联系人")) {// 通话记录的联系人
+            holder.tvName.setText(list.get(position).get("phoneNum"));// 通话记录的联系人
         } else {
-            holder.tvName.setText(list.get(position).get("name") + "(" + list.get(position).get("number") + ")");// 通话记录的联系人
+            holder.tvName.setText(list.get(position).get("peopleName") + "(" + list.get(position).get("phoneNum") + ")");// 通话记录的联系人
         }
-        holder.tvTimeLead.setText(list.get(position).get("day") + "  " + list.get(position).get("time"));// 通话距离
+        holder.tvTimeLead.setText(list.get(position).get("phoneNum"));// 通话距离
         return convertView;
     }
 
