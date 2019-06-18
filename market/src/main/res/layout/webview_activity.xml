@@ -5,21 +5,28 @@
     android:layout_height="match_parent"
     android:background="@android:color/white">
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/webview_toolbar"
-        android:background="#000"
-        android:gravity="center"
+        android:background="#f5f5f5"
         android:layout_width="match_parent"
-        android:layout_height="50dp">
+        android:layout_height="45dp">
         <TextView
             android:id="@+id/title"
-            android:textSize="18sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:text="正   文"
-            android:textColor="#fff"
+            android:textColor="#000"
             />
-    </LinearLayout>
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:src="@drawable/back_detail"
+            android:layout_height="match_parent" />
+
+
+    </RelativeLayout>
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

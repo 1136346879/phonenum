@@ -14,6 +14,7 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 /***
@@ -32,6 +33,7 @@ public class WebviewActivity extends Activity implements View.OnClickListener {
     private boolean isRootPage;
     private String title;
     private TextView tetle;
+    private ImageView back;
 
     @SuppressLint({"CheckResult", "SetJavaScriptEnabled"})
     @Override
@@ -44,6 +46,13 @@ public class WebviewActivity extends Activity implements View.OnClickListener {
         setContentView(R.layout.webview_activity);
 
         webView = (WebView) findViewById(R.id.my_webview);
+        back = (ImageView) findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         tetle = (TextView) findViewById(R.id.title);
         webView.requestFocus();
         webView.getSettings().setUseWideViewPort(true);

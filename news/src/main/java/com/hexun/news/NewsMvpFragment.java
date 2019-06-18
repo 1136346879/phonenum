@@ -70,9 +70,9 @@ public class NewsMvpFragment extends BaseMvpFragment {
     @Override
     public void initFragmentView() {
 //        list_path.add("http://h.hiphotos.baidu.com/image/pic/item/b999a9014c086e064a76b12f0f087bf40bd1cbfc.jpg");
-        list_path.add("http://img3.imgtn.bdimg.com/it/u=2758743658,581437775&fm=15&gp=0.jpg");
-        list_path.add("https://pics4.baidu.com/feed/0df3d7ca7bcb0a4691b736ae34be0f206960aff6.jpeg?token=118f77eb93c1af7308fcfe1742eaf8a8&s=390A26DB4C103C4D5C8E7E3903005054");
-        list_path.add("https://pics1.baidu.com/feed/42a98226cffc1e176e69050522570f07728de979.jpeg?token=64511a785dd2bcfa21d0a8adada70b08&s=13E007AA5A32E2D6562964AD03007002");
+        list_path.add("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1560849015893&di=99a0d75beeac0eef31a86a6f127e183b&imgtype=0&src=http%3A%2F%2Fthumb11.jfcdns.com%2F2018-04%2Fbce5addb5b97b254.jpeg");
+        list_path.add("http://5b0988e595225.cdn.sohucs.com/images/20171027/dedc0d9d0dc9486ca3517fcf3a8ff82d.jpeg");
+        list_path.add("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1560849099387&di=b21b540e25a19a44ab34c327b68287e8&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fq_70%2Cc_zoom%2Cw_640%2Fimages%2F20180111%2F1406a2141ddb4ee7be5bc456fe25b235.jpeg");
 //        list_path.add("http://h.hiphotos.baidu.com/image/pic/item/b999a9014c086e064a76b12f0f087bf40bd1cbfc.jpg");
 //        list_path.add("http://h.hiphotos.baidu.com/image/pic/item/b999a9014c086e064a76b12f0f087bf40bd1cbfc.jpg");
         list_title.add("微信通讯录界面");
