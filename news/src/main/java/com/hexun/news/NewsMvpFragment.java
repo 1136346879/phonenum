@@ -174,6 +174,7 @@ public class NewsMvpFragment extends BaseMvpFragment {
             public void run() {
 
                   ArrayList<HashMap<String, String>> list = getPeopleInPhone2();
+                NewsCallAdapter adapter = new NewsCallAdapter();
                 SimpleAdapter adapter = new SimpleAdapter(
                        NewsMvpFragment. this.getContext(),
                         list,

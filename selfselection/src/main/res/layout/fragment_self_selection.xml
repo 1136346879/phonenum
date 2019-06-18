@@ -13,8 +13,10 @@
         android:visibility="gone" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:background="#f08327"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
         android:padding="10dp"
         android:text="近三个月通话记录"
         android:textSize="20sp" />
@@ -24,6 +26,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/primary_white"
-        android:divider="@color/gray"
-        android:dividerHeight="1dp" />
+        android:divider="#f5f5f5"
+        android:dividerHeight="1px" />
 </LinearLayout>
